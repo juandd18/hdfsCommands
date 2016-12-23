@@ -33,7 +33,7 @@ hdfs dfs -apppendToFile local1.txt /path/in/hdfs/data.txt
 hdfs dfs -chgrp -R /pahtp/hdfs/direcoty-name
 
 //display free space / show disk usage
-hdfs dfs -df /path/hdfs/directory  //display free space
+hdfs dfs -df -h /path/hdfs/directory  //display free space  -h : change a text format
 hdfs dfs -du /path/hdfs/directory //disk usage
 
 //find a file
@@ -44,5 +44,12 @@ hdfs dfs -setrep [-R] 3 /path/hdfs/directory
 
 //bring the head of a file
 hdfs dfs -cat /path/files.txt | head
+
+// shows the files of the two folders
+hdfs dfs -ls /user/hadoop/testdir1 /user/hadoop/testdir2
+
+//only shows directories
+hdfs dfs -ls -d /user/alapati
+
 
 
