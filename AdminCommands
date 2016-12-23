@@ -1,0 +1,47 @@
+
+//format the namenode (done ONLY ONCE cluster creation). zero in up the name node as format and usb
+hadoop namenode -format
+
+//file system check
+hadoop fsck /
+
+//fs admin 
+hdfs dfsadmin
+
+//rebanlance the hdfs (run when you put more data nodes in the cluster)
+hdfs balancer
+
+//put a file into hdfs
+hdfs dfs -put local-file.txt /path/in/hdfs/2016-apache.txt
+//get a file to hdfs
+hdfs dfs -get /path/in/hdfs/2016-apache.txt local-filte.txt
+
+//delete a file 
+hdfs dfs -rm /path/in/hdfs/data  //if dir (-r = recursive)
+
+hdfs dfs -mkdir /path/in/hdfs/data
+
+hdfs dfs -ls /path/in/hdfs/data
+
+
+/////version hadoop > 2.4
+
+//append to a file
+hdfs dfs -apppendToFile local1.txt /path/in/hdfs/data.txt
+
+//change group ownership of file/directory
+hdfs dfs -chgrp -R /pahtp/hdfs/direcoty-name
+
+//display free space / show disk usage
+hdfs dfs -df /path/hdfs/directory  //display free space
+hdfs dfs -du /path/hdfs/directory //disk usage
+
+//find a file
+hdfs dfs -find /path/hdfs/directory -name file-text.txt
+
+//set a replication factor file/directory
+hdfs dfs -setrep [-R] 3 /path/hdfs/directory
+
+
+
+
