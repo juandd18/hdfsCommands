@@ -42,6 +42,7 @@ hdfs dfs -find /path/hdfs/directory -name file-text.txt
 //set a replication factor file/directory
 hdfs dfs -setrep [-R] 3 /path/hdfs/directory
 
-
+//bring the head of a file
+hdfs dfs -cat /path/files.txt | head
 
 
