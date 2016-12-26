@@ -34,7 +34,17 @@ hdfs dfs -chgrp -R /pahtp/hdfs/direcoty-name
 
 //display free space / show disk usage
 hdfs dfs -df -h /path/hdfs/directory  //display free space  -h : change a text format
-hdfs dfs -du /path/hdfs/directory //disk usage
+
+//disk usage
+hdfs dfs -du -h /path/hdfs/directory  
+// The first column shows the actual size (raw size) of the files that users have placed in the various HDFS directories.
+//The second column shows the actual space consumed by those files in HDFS.
+
+
+//hacer un summarize "-s". el ultimo "/" hace que traiga el resumen de todo el hdfs
+hdfs dfs -du -s -h /      
+
+
 
 //find a file
 hdfs dfs -find /path/hdfs/directory -name file-text.txt
@@ -80,6 +90,13 @@ hdfs dfs -rm -r -skipTrash /user/daaguila/prueba/folderdos
 
 //borra todos los .Trash de todos los usuarios
 hdfs dfs –expunge
+
+//test if a file or a directory exists (-e = check if the specify path exists)
+hdfs dfs -test -e /user/daaguila
+
+//creates an empty file
+hdfs dfs -touchz /user/daaguila/prueba/test.txt
+
 
 
 
