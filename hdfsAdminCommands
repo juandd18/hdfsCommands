@@ -1,0 +1,14 @@
+
+The hdfs dfsadmin command lets you administer HDFS from the command line.
+
+//general report of the cluster 
+hdfs dfsadmin -report
+
+//print topology of the cluster
+hdfs dfsadmin -printTopology
+
+//updates the NameNode with the list of DataNodes that are allowed to connect to the NameNode.
+hdfs dfsadmin –refreshNodes
+
+
+
