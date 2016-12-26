@@ -3,7 +3,7 @@
 hadoop namenode -format
 
 //file system check
-hadoop fsck /
+hadoop fsck /user/daaguila
 
 //fs admin 
 hdfs dfsadmin
@@ -50,6 +50,42 @@ hdfs dfs -ls /user/hadoop/testdir1 /user/hadoop/testdir2
 
 //only shows directories
 hdfs dfs -ls -d /user/alapati
+
+//shows statistics of the ls 
+hdfs dfs -stat "%b %F %g %n %r %o" /user/jquintan/good/part-00001
+
+%b Size of file in bytes
+%F Will return "file", "directory", or "symlink" depending on the type of inode
+%g Group name
+%n Filename
+%o HDFS Block size in bytes ( 128MB by default )
+%r Replication factor
+%u Username of owner
+%y Formatted mtime of inode
+%Y UNIX Epoch mtime of inode
+
+
+//creates the parent folder given in the rute..  creates prueba and folder (directories)
+ hdfs dfs -mkdir -p /user/daaguila/prueba/folder 
+
+//borrar carpeta   -r = recursivo
+hdfs dfs -rm -r /user/daaguila/prueba/folder
+
+//borrar carpeta saltando el .Trash
+hdfs dfs -rm -r -skipTrash /user/daaguila/prueba/folderdos
+
+//para borrar un archivo del trash hay que ir a esa carpeta 
+//y borrarlo
+ hdfs dfs -rm -r /user/daaguila/.Trash/161226185109
+
+//borra todos los .Trash de todos los usuarios
+hdfs dfs –expunge
+
+
+
+
+
+
 
 
 
