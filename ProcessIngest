@@ -1,0 +1,49 @@
+
+
+//file system check of the folder selected (landing) for ingest or load data
+hdfs fsck /user/daaguila
+
+//uncompress .tar.gz
+tar -zxvf example.tar.gz
+//uncompress .tar.Z
+tar -xvzf whatever.tar.Z
+
+//uncompress in hdfs
+hadoop fs -cat /tmp/Links.txt.gz | gzip -d | hadoop fs -put - /tmp/unzipped/Links.txt
+
+Operations en tar:
+       [-]A --catenate --concatenate
+       [-]c --create
+       [-]d --diff --compare
+       [-]r --append
+       [-]t --list
+       [-]u --update
+       [-]x --extract --get
+       --delete
+
+       Common Options:
+       -C, --directory DIR
+       -f, --file F
+       -j, --bzip2
+       -p, --preserve-permissions
+       -v, --verbose
+       -z, --gzip
+
+//put a file into hdfs
+hdfs dfs -put local-file.txt /path/in/hdfs/2016-apache.txt
+
+//display free space for entire cluster
+hdfs dfs -df -h 
+
+//disk usage
+hdfs dfs -du -h /path/hdfs/directory  
+// The first column shows the actual size (raw size) of the files that users have placed in the various HDFS directories.
+//The second column shows the actual space consumed by those files in HDFS.
+
+//hacer un summarize "-s". el ultimo "/" hace que traiga el resumen de todo el hdfs
+hdfs dfs -du -s -h / 
+
+//append to a file
+hdfs dfs -apppendToFile local1.txt /path/in/hdfs/data.txt
+
+
