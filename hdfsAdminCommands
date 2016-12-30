@@ -3,6 +3,7 @@ The hdfs dfsadmin command lets you administer HDFS from the command line.
 
 //general report of the cluster 
 hdfs dfsadmin -report
+sudo -u hdfs hdfs dfsadmin -metasave test.txt
 
 //print topology of the cluster
 hdfs dfsadmin -printTopology
