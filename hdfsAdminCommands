@@ -7,6 +7,7 @@ sudo -u hdfs hdfs dfsadmin -metasave test.txt
 
 //print topology of the cluster
 hdfs dfsadmin -printTopology
+sudo -u hdfs hdfs dfsadmin -printTopology
 
 //updates the NameNode with the list of DataNodes that are allowed to connect to the NameNode.
 hdfs dfsadmin –refreshNodes
